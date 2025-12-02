@@ -110,8 +110,9 @@ Antes de começar, você precisará ter instalado em sua máquina:
 ### 1️⃣ Rodando o Back-End (API)
 1. Abra o terminal na pasta `Back-End`.
 2. Instale as dependências e execute o projeto:
-   ```bash
-   mvn spring-boot:run
+```bash
+mvn spring-boot:run
+```
 
 (Ou utilize sua IDE de preferência como IntelliJ/Eclipse para rodar a classe HelpdeskturmaaApplication.java) 3. O servidor iniciará na porta 8080.
 
@@ -124,23 +125,29 @@ Execute o servidor de desenvolvimento:
 
 ```bash
 ng serve
+```
 A aplicação estará disponível no navegador em: http://localhost:4200
 
+## 🔐 Credenciais de Acesso (Ambiente de Teste)
 
----
+O sistema possui um serviço de **DB Seeding** que popula o banco de dados automaticamente com usuários fictícios para facilitar a avaliação e os testes.
 
-### 2. Seção "Credenciais de Acesso" (Crucial para Testes)
-Como você tem o `DBService` populando o banco, informe os logins prontos. Isso facilita muito a vida de quem vai avaliar.
+> **Nota:** Estas credenciais são recriadas sempre que o perfil `test` é ativado.
 
-```markdown
----
-
-## 🔐 Acesso ao Sistema
-
-O sistema possui um serviço de **DB Seeding** que popula o banco de dados automaticamente ao iniciar (perfil de `test`). Utilize as credenciais abaixo para testar os diferentes perfis:
-
-| Perfil | E-mail (Login) | Senha | Descrição |
+| Perfil (Role) | E-mail (Login) | Senha | Permissões |
 | :--- | :--- | :--- | :--- |
-| **Admin/Técnico** | `bill@mail.com` | `123` | Acesso total ao sistema. |
-| **Técnico** | `stallman@mail.com` | `456` | Acesso às rotas de técnicos e chamados. |
-| **Cliente** | `linus@mail.com` | `123` | Acesso limitado (visualização de chamados). |
+| **ADMIN** | `bill@mail.com` | `123` | Acesso total (Gerencia Técnicos, Clientes e Chamados). |
+| **TÉCNICO** | `stallman@mail.com` | `456` | Visualiza e atende os chamados. |
+| **CLIENTE** | `linus@mail.com` | `123` | Abre novos chamados e visualiza seus próprios tickets. |
+
+> **Nota:** Ainda não há diferenciação no nível de acesso para cada tipo de usuário.
+
+## 🦸 Autor
+
+Desenvolvido por **dherii**. 
+
+Entre em contato! 👋
+
+* **LinkedIn:** Dherick de Sousa Bomfim(www.linkedin.com/in/dherick-sousa-180104121205dm)
+* **Email:** [dhericksousab@gmail.com](mailto:dhericksousab@gmail.com)
+* **GitHub:** [@dherii](https://github.com/dherii)
