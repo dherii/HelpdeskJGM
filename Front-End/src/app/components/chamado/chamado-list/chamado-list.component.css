@@ -1,0 +1,60 @@
+.container {
+    width: 100%;
+    padding: 2rem;
+    box-sizing: border-box;
+}
+
+h1 {
+    color: #173A23;
+}
+
+.btn-novo {
+    margin-bottom: 20px;
+    background-color: #173A23 !important;
+    color: white !important;
+    width: 100%;
+    max-width: 200px;
+}
+
+mat-form-field { width: 100%; }
+table { width: 100%; }
+
+/* --- ESTILO DAS BADGES (ETIQUETAS) --- */
+.badge {
+    padding: 6px 12px;
+    border-radius: 4px;
+    color: white;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+}
+
+/* Cores de Prioridade */
+.prioridade-baixa { background-color: #4CAF50; } /* Verde */
+.prioridade-media { background-color: #FF9900; } /* Laranja */
+.prioridade-alta  { background-color: #D51320; } /* Vermelho */
+
+/* Cores de Status */
+.status-aberto     { background-color: #FBC02D; color: #333; } /* Amarelo */
+.status-andamento  { background-color: #2196F3; } /* Azul */
+.status-encerrado  { background-color: #9E9E9E; } /* Cinza */
+
+/* Ações */
+.edit { color: #fbc02d; margin-right: 15px; cursor: pointer; }
+.view { color: #173A23; cursor: pointer; } /* Botão de Ver Detalhes */
+
+/* Header da Tabela */
+th.mat-header-cell {
+    background-color: #173A23;
+    color: #FFF;
+    font-weight: bold;
+}
+
+.filter-status {
+    margin-bottom: 14px;
+}
+
+mat-radio-button {
+    margin-left: 20px;
+}

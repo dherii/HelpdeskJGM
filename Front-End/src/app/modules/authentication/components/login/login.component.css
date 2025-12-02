@@ -1,0 +1,194 @@
+.split-screen-container {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  font-family: 'Roboto', sans-serif;
+  overflow: hidden; /* Evita scroll desnecessário */
+}
+
+/* --- LADO ESQUERDO (Verde) --- */
+.left-pane {
+  flex: 1;
+  background: linear-gradient(135deg, #255335 40%, #0C2515 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Centraliza horizontalmente */
+  padding: 40px;
+  color: white;
+}
+
+.brand-content {
+  max-width: 440px;
+}
+
+.logo {
+  max-width: 480px; /* Ajuste conforme o tamanho da sua logo */
+  margin-bottom: 60px;
+  display: block;
+}
+
+.brand-text h1 {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.brand-text p {
+  font-size: 18px;
+  font-weight: 300;
+  opacity: 0.8;
+  line-height: 1.5;
+}
+
+
+.right-pane {
+  flex: 1;
+  background-color: #F5F5F5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.form-container {
+  width: 100%;
+  max-width: 400px;
+  padding: 20px;
+}
+
+.form-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.form-header h2 {
+  color: #173A23;
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.form-header p {
+  color: #888;
+  font-size: 14px;
+}
+
+
+.input-group {
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.input-group label {
+  display: block;
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+
+.input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.input-wrapper input {
+  width: 100%;
+  height: 50px;
+  background-color: #E0E0E0;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  padding: 0 16px;
+  font-size: 15px;
+  color: #333;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.input-wrapper input:focus {
+  background-color: #ffffff;
+  border-color: #173A23; 
+  box-shadow: 0 0 0 3px rgba(23, 58, 35, 0.1);
+}
+
+.input-wrapper input.error-border {
+  border-color: #D32F2F;
+  background-color: #ffebee;
+}
+
+.eye-icon {
+  position: absolute;
+  right: 12px;
+  color: #777;
+  cursor: pointer;
+  font-size: 20px;
+  user-select: none;
+}
+
+.error-msg {
+  color: #D32F2F;
+  font-size: 12px;
+  margin-top: 5px;
+  display: block;
+}
+
+/* --- LINKS E BOTÕES --- */
+.forgot-password {
+  text-align: right;
+  margin-bottom: 30px;
+}
+
+.forgot-password a {
+  color: #173A23;
+  font-size: 13px;
+  text-decoration: underline;
+  font-weight: 600;
+}
+
+.btn-submit {
+  width: 100%;
+  height: 50px;
+  background-color: #173A23;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 700;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background 0.3s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn-submit:hover:not(:disabled) {
+  background-color: #0f2919; /* Um pouco mais escuro no hover */
+}
+
+.btn-submit:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+/* RESPONSIVIDADE (Para celular) */
+@media (max-width: 900px) {
+  .split-screen-container {
+    flex-direction: column;
+    height: auto;
+    min-height: 100vh;
+  }
+  
+  .left-pane {
+    padding: 30px;
+    flex: none;
+  }
+
+  .right-pane {
+    padding: 40px 20px;
+    background-color: white;
+    flex: 1;
+  }
+}

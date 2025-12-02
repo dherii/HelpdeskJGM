@@ -1,0 +1,51 @@
+<div class="container mat-elevation-z8">
+  <form [formGroup]="form">
+    
+    <h1 class="header-title">Atualizar Cliente</h1>
+    
+    <img src="assets/LogoJGMix.svg" alt="Logo" class="logo-form">
+
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Nome Completo</mat-label>
+      <input matInput formControlName="nome" placeholder="Ex: Maria Souza">
+      <mat-icon matSuffix>person</mat-icon>
+      <mat-error *ngIf="form.get('nome')?.invalid">O nome é obrigatório</mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>CPF</mat-label>
+      <input 
+        matInput 
+        formControlName="cpf" 
+        mask="000.000.000-00" 
+        placeholder="000.000.000-00"
+      >
+      <mat-icon matSuffix>badge</mat-icon>
+      <mat-error *ngIf="form.get('cpf')?.invalid">CPF inválido</mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>E-mail</mat-label>
+      <input matInput formControlName="email" type="email">
+      <mat-icon matSuffix>email</mat-icon>
+      <mat-error *ngIf="form.get('email')?.invalid">E-mail inválido</mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Senha</mat-label>
+      <input matInput formControlName="senha" type="password" placeholder="Nova senha (ou repita a atual)">
+      <mat-icon matSuffix>lock</mat-icon>
+      <mat-error *ngIf="form.get('senha')?.invalid">Senha obrigatória</mat-error>
+    </mat-form-field>
+
+    <div class="button-group">
+      <button mat-stroked-button color="warn" routerLink="/clientes" type="button">
+        CANCELAR
+      </button>
+      <button mat-raised-button class="btn-save" (click)="update()" [disabled]="form.invalid">
+        ATUALIZAR
+      </button>
+    </div>
+
+  </form>
+</div>

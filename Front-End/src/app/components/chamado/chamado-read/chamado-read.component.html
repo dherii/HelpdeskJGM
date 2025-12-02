@@ -1,0 +1,53 @@
+<div class="container mat-elevation-z8">
+  <form [formGroup]="form">
+    
+    <h1 class="header-title">Detalhes do Chamado</h1>
+    
+    <img src="assets/LogoJGMix.svg" alt="Logo" class="logo-form">
+
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Título do Chamado</mat-label>
+      <input matInput [value]="chamado.titulo" disabled class="input-disabled">
+    </mat-form-field>
+
+    <div class="row-inputs">
+      
+      <mat-form-field appearance="outline" class="half-width">
+        <mat-label>Cliente</mat-label>
+        <input matInput [value]="chamado.nomeCliente" disabled class="input-disabled">
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="half-width">
+        <mat-label>Técnico</mat-label>
+        <input matInput [value]="chamado.nomeTecnico" disabled class="input-disabled">
+      </mat-form-field>
+
+    </div>
+
+    <div class="row-inputs">
+      
+      <mat-form-field appearance="outline" class="half-width">
+        <mat-label>Prioridade</mat-label>
+        <input matInput [value]="retornaPrioridade(chamado.prioridade)" disabled class="input-disabled">
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="half-width">
+        <mat-label>Status</mat-label>
+        <input matInput [value]="retornaStatus(chamado.status)" disabled class="input-disabled">
+      </mat-form-field>
+
+    </div>
+
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Observações</mat-label>
+      <textarea matInput [value]="chamado.observacoes" class="area-obs" disabled></textarea>
+    </mat-form-field>
+
+    <div class="button-group">
+      <button mat-stroked-button color="primary" routerLink="/chamados" class="btn-back">
+        <mat-icon>arrow_back</mat-icon> VOLTAR
+      </button>
+    </div>
+
+  </form>
+</div>

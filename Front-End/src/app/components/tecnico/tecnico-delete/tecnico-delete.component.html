@@ -1,0 +1,43 @@
+<div class="container mat-elevation-z8">
+  <form> <h1 class="header-title">Deletar Técnico</h1>
+    <p class="warning-text">Tem certeza que deseja remover este técnico?</p>
+    
+    <img src="assets/LogoJGMix.svg" alt="Logo" class="logo-form">
+
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Nome Completo</mat-label>
+      <input matInput [value]="tecnico.nome" disabled>
+      <mat-icon matSuffix>person</mat-icon>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>CPF</mat-label>
+      <input matInput [value]="tecnico.cpf" mask="000.000.000-00" disabled>
+      <mat-icon matSuffix>badge</mat-icon>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>E-mail</mat-label>
+      <input matInput [value]="tecnico.email" disabled>
+      <mat-icon matSuffix>email</mat-icon>
+    </mat-form-field>
+
+    <div class="perfis-section">
+      <mat-label class="lbl-perfil">Perfis de Acesso:</mat-label>
+      <div class="checkbox-group">
+        <mat-checkbox [checked]="perfis.includes(0)" disabled>ADMIN</mat-checkbox>
+        <mat-checkbox [checked]="perfis.includes(2)" disabled>TÉCNICO</mat-checkbox>
+      </div>
+    </div>
+
+    <div class="button-group">
+      <button mat-stroked-button color="primary" routerLink="/tecnicos" type="button">
+        CANCELAR
+      </button>
+      <button mat-raised-button color="warn" (click)="delete()">
+        EXCLUIR
+      </button>
+    </div>
+
+  </form>
+</div>

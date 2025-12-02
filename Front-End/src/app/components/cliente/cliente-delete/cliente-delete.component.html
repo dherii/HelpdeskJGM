@@ -1,0 +1,37 @@
+<div class="container mat-elevation-z8">
+  <form> 
+    
+    <h1 class="header-title">Deletar Cliente</h1>
+    <p class="warning-text">Tem certeza que deseja remover este cliente?</p>
+    
+    <img src="assets/LogoJGMix.svg" alt="Logo" class="logo-form">
+
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Nome Completo</mat-label>
+      <input matInput [value]="cliente.nome" disabled>
+      <mat-icon matSuffix>person</mat-icon>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>CPF</mat-label>
+      <input matInput [value]="cliente.cpf" mask="000.000.000-00" disabled>
+      <mat-icon matSuffix>badge</mat-icon>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>E-mail</mat-label>
+      <input matInput [value]="cliente.email" disabled>
+      <mat-icon matSuffix>email</mat-icon>
+    </mat-form-field>
+
+    <div class="button-group">
+      <button mat-stroked-button color="primary" routerLink="/clientes" type="button">
+        CANCELAR
+      </button>
+      <button mat-raised-button color="warn" (click)="delete()">
+        EXCLUIR
+      </button>
+    </div>
+
+  </form>
+</div>

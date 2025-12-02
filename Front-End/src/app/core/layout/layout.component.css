@@ -1,0 +1,79 @@
+/* Container Geral */
+.sidenav-container {
+  height: 100%;
+}
+
+/* --- SIDENAV (Lateral Esquerda) --- */
+.sidenav {
+  width: 300px; /* Largura fixa */
+  background-color: #173A23; /* Verde Escuro da Marca */
+  border: none;
+  box-shadow: 4px 0 8px rgba(0,0,0,0.2);
+  /* Correção para barra de rolagem horizontal indesejada */
+  overflow-x: hidden; 
+}
+
+.sidenav-header {
+  padding: 32px 16px;
+  text-align: center;
+  background-color: #173A23; 
+  margin-bottom: 10px;
+}
+
+.logo-sidenav {
+  max-width: 80%;
+  height: auto;
+}
+
+/* --- LINKS DE NAVEGAÇÃO --- */
+.mat-nav-list a {
+  color: #E0E0E0 !important; /* Texto claro */
+  font-size: 15px;
+  font-weight: 500;
+  transition: all 0.3s;
+  border-left: 5px solid transparent; /* Prepara a borda do ativo */
+}
+
+.mat-icon {
+  margin-right: 12px;
+  color: #B0BEC5; /* Ícone cinza claro */
+}
+
+/* Hover (Passar o mouse) */
+.mat-nav-list a:hover {
+  background-color: rgba(255, 254, 254, 0.521);
+  color: #fff !important;
+}
+
+/* Link Ativo (Rota atual) */
+.active-link {
+  background-color: rgba(255, 254, 254, 0.521);
+  color: #fff !important;
+  border-left: 5px solid #D51320; /* Borda VERMELHA da marca */
+}
+
+.active-link .mat-icon {
+  color: #D51320; /* Ícone fica vermelho */
+}
+
+/* Separação do Logout */
+.logout-item {
+  margin-top: 20px;
+  border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+/* --- ÁREA DE CONTEÚDO (Direita) --- */
+.app-header {
+  background-color: #fff; /* Toolbar Branca */
+  color: #173A23; /* Texto Verde */
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.content-wrapper {
+  padding: 24px;
+  background-color: #F5F5F5;
+  min-height: calc(100vh - 64px);
+}

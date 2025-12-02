@@ -1,0 +1,80 @@
+<div class="split-screen-container">
+  
+  <!-- LADO ESQUERDO: MARCA -->
+  <div class="left-pane">
+    <div class="brand-content">
+      <!-- Ajuste o caminho da logo se necessário -->
+      <img src="assets/LogoJGMix.svg" class="logo" alt="Logo JG Mix">
+      
+      <div class="brand-text">
+        <h1>GESTÃO DE SERVIÇOS E ESTOQUE</h1>
+        <p>Controle de baterias, instalações e emissão de garantias.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- LADO DIREITO: FORMULÁRIO -->
+  <div class="right-pane">
+    <div class="form-container">
+      
+      <div class="form-header">
+        <h2>Bem-vindo!</h2>
+        <p>Insira suas credenciais para continuar</p>
+      </div>
+
+      <form [formGroup]="form" (ngSubmit)="login()">
+        
+        <!-- CAMPO E-MAIL -->
+        <div class="input-group">
+          <label for="email">E-mail</label>
+          <div class="input-wrapper">
+            <input 
+              id="email"
+              type="email" 
+              formControlName="email" 
+              placeholder="Insira seu e-mail"
+              [class.error-border]="form.get('email')?.invalid && form.get('email')?.touched"
+            >
+          </div>
+          <!-- Mensagem de erro manual para customizar o visual -->
+          <span class="error-msg" *ngIf="form.get('email')?.invalid && form.get('email')?.touched">
+            E-mail inválido
+          </span>
+        </div>
+
+        <!-- CAMPO SENHA -->
+        <div class="input-group">
+          <label for="senha">Senha</label>
+          <div class="input-wrapper">
+            <input 
+              id="senha"
+              [type]="hide ? 'password' : 'text'" 
+              formControlName="senha" 
+              placeholder="Insira sua senha"
+              [class.error-border]="form.get('senha')?.invalid && form.get('senha')?.touched"
+            >
+            <!-- Ícone de Olho (mantendo o Material Icon mas sem o botão pesado) -->
+            <mat-icon class="eye-icon" (click)="hide = !hide">
+              {{hide ? 'visibility_off' : 'visibility'}}
+            </mat-icon>
+          </div>
+          <span class="error-msg" *ngIf="form.get('senha')?.invalid && form.get('senha')?.touched">
+            Senha obrigatória
+          </span>
+        </div>
+
+        <div class="forgot-password">
+          <a href="#">Esqueci minha senha</a>
+        </div>
+
+        <!-- BOTÃO -->
+        <button type="submit" class="btn-submit" [disabled]="form.invalid || loading">
+          <span *ngIf="!loading">Entrar</span>
+          <mat-progress-spinner *ngIf="loading" diameter="20" mode="indeterminate" color="accent"></mat-progress-spinner>
+        </button>
+
+      </form>
+
+    </div>
+  </div>
+</div>

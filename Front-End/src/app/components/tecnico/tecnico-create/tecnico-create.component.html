@@ -1,0 +1,66 @@
+v<div class="container mat-elevation-z8">
+  <form [formGroup]="form">
+    
+    <h1 class="header-title">Criar Novo Técnico</h1>
+    
+    <img src="assets/LogoJGMix.svg" alt="Logo" class="logo-form">
+
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Nome Completo</mat-label>
+      <input matInput formControlName="nome" placeholder="Ex: Valdir Silva">
+      <mat-icon matSuffix>person</mat-icon>
+      <mat-error *ngIf="form.get('nome')?.invalid">O nome é obrigatório (min 3 caracteres)</mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="full-width">
+  <mat-label>CPF</mat-label>
+  <input 
+    matInput 
+    formControlName="cpf" 
+    mask="000.000.000-00" 
+    placeholder="000.000.000-00"
+  >
+  <mat-icon matSuffix>badge</mat-icon>
+  <mat-error *ngIf="form.get('cpf')?.invalid">CPF inválido</mat-error>
+</mat-form-field>
+
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>E-mail</mat-label>
+      <input matInput formControlName="email" type="email" placeholder="Ex: tecnico@gmix.com">
+      <mat-icon matSuffix>email</mat-icon>
+      <mat-error *ngIf="form.get('email')?.invalid">E-mail inválido</mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Senha</mat-label>
+      <input matInput formControlName="senha" type="password" placeholder="Mínimo 3 caracteres">
+      <mat-icon matSuffix>lock</mat-icon>
+      <mat-error *ngIf="form.get('senha')?.invalid">Senha obrigatória</mat-error>
+    </mat-form-field>
+
+    <div class="perfis-section">
+      <mat-label class="lbl-perfil">Perfis de Acesso:</mat-label>
+      <div class="checkbox-group">
+        
+        <mat-checkbox (change)="addPerfil(0)" [checked]="perfis.includes(0)" color="primary">
+            ADMIN
+        </mat-checkbox>
+
+        <mat-checkbox [checked]="true" disabled color="primary">
+            TÉCNICO
+        </mat-checkbox>
+        
+      </div>
+    </div>
+
+    <div class="button-group">
+      <button mat-stroked-button color="warn" routerLink="../" type="button">
+        CANCELAR
+      </button>
+      <button mat-raised-button class="btn-save" (click)="create()" [disabled]="form.invalid">
+        SALVAR
+      </button>
+    </div>
+
+  </form>
+</div>

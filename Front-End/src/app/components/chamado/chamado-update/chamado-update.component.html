@@ -1,0 +1,72 @@
+<div class="container mat-elevation-z8">
+  <form [formGroup]="form">
+    
+    <h1 class="header-title">Atualizar Chamado</h1>
+    
+    <img src="assets/LogoJGMix.svg" alt="Logo" class="logo-form">
+
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Título do Chamado</mat-label>
+      <input matInput formControlName="titulo" placeholder="Ex: Troca de Bateria Heliar" required>
+    </mat-form-field>
+
+    <div class="row-inputs">
+      
+      <mat-form-field appearance="outline" class="half-width">
+        <mat-label>Cliente</mat-label>
+        <mat-select formControlName="cliente" required>
+          <mat-option *ngFor="let c of clientes" [value]="c.id">
+            {{ c.nome }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="half-width">
+        <mat-label>Técnico</mat-label>
+        <mat-select formControlName="tecnico" required>
+          <mat-option *ngFor="let t of tecnicos" [value]="t.id">
+            {{ t.nome }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+    </div>
+
+    <div class="row-inputs">
+      
+      <mat-form-field appearance="outline" class="half-width">
+        <mat-label>Prioridade</mat-label>
+        <mat-select formControlName="prioridade" required>
+          <mat-option [value]="0">BAIXA</mat-option>
+          <mat-option [value]="1">MÉDIA</mat-option>
+          <mat-option [value]="2">ALTA</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="half-width">
+        <mat-label>Status</mat-label>
+        <mat-select formControlName="status" required>
+          <mat-option [value]="0">ABERTO</mat-option>
+          <mat-option [value]="1">ANDAMENTO</mat-option>
+          <mat-option [value]="2">ENCERRADO</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+    </div>
+
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Observações</mat-label>
+      <textarea matInput formControlName="observacoes" class="area-obs"></textarea>
+    </mat-form-field>
+
+    <div class="button-group">
+      <button mat-stroked-button color="warn" routerLink="/chamados" type="button">
+        CANCELAR
+      </button>
+      <button mat-raised-button class="btn-save" (click)="update()" [disabled]="form.invalid">
+        ATUALIZAR
+      </button>
+    </div>
+
+  </form>
+</div>

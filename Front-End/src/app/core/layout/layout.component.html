@@ -1,0 +1,63 @@
+<mat-sidenav-container class="sidenav-container">
+  
+  <mat-sidenav #drawer class="sidenav" fixedInViewport="true"
+      [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+      [mode]="(isHandset$ | async) ? 'over' : 'side'"
+      [opened]="(isHandset$ | async) === false">
+    
+    <div class="sidenav-header">
+      <img src="assets/LogoJGMix.svg" alt="Logo JG Mix" class="logo-sidenav">
+    </div>
+
+    <mat-nav-list>
+      <a mat-list-item routerLink="/home" routerLinkActive="active-link">
+        <mat-icon mat-list-icon>home</mat-icon>
+        <span mat-line>HOME</span>
+      </a>
+
+      <a mat-list-item routerLink="/tecnicos" routerLinkActive="active-link">
+        <mat-icon mat-list-icon>engineering</mat-icon> 
+        <span mat-line>TÉCNICOS</span>
+      </a>
+
+      <a mat-list-item routerLink="/clientes" routerLinkActive="active-link">
+        <mat-icon mat-list-icon>people</mat-icon>
+        <span mat-line>CLIENTES</span>
+      </a>
+
+      <a mat-list-item routerLink="/chamados" routerLinkActive="active-link">
+        <mat-icon mat-list-icon>support_agent</mat-icon>
+        <span mat-line>CHAMADOS</span>
+      </a>
+
+      <a mat-list-item href="https://github.com/dherii" target="_blank">
+        <mat-icon mat-list-icon>code</mat-icon> 
+        <span mat-line>GITHUB</span>
+      </a>
+
+      <a mat-list-item (click)="logout()" class="logout-item" style="cursor: pointer;">
+        <mat-icon mat-list-icon>logout</mat-icon>
+        <span mat-line>LOGOUT</span>
+      </a>
+    </mat-nav-list>
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    
+    <mat-toolbar color="primary" class="app-header" *ngIf="isHandset$ | async">
+      <button
+        type="button"
+        aria-label="Toggle sidenav"
+        mat-icon-button
+        (click)="drawer.toggle()">
+        <mat-icon>menu</mat-icon>
+      </button>
+      <span>JG Mix HelpDesk</span>
+    </mat-toolbar>
+
+    <div class="content-wrapper">
+      <router-outlet></router-outlet>
+    </div>
+
+  </mat-sidenav-content>
+</mat-sidenav-container>

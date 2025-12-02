@@ -1,0 +1,70 @@
+.container {
+  width: 100%;
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 40px;
+  background-color: #fff;
+  border-radius: 8px;
+}
+
+.header-title {
+  text-align: center;
+  color: #173A23; /* Verde Marca */
+  margin-bottom: 30px;
+  font-size: 2rem;
+}
+
+.logo-form {
+  display: block;
+  margin: 0 auto 30px auto;
+  width: 120px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.full-width {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+/* Perfis */
+.perfis-section {
+  margin: 20px 0;
+  padding: 15px;
+  border: 1px solid #e0e0e0;
+  border-radius: 5px;
+}
+
+.lbl-perfil {
+  display: block;
+  margin-bottom: 10px;
+  color: #666;
+  font-weight: 500;
+}
+
+.checkbox-group {
+  display: flex;
+  gap: 20px;
+}
+
+/* Botões */
+.button-group {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.button-group button {
+  width: 48%;
+  height: 50px;
+  font-size: 16px;
+}
+
+.btn-save {
+  background-color: #173A23 !important;
+  color: white !important;
+}

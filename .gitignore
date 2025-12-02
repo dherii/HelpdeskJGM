@@ -1,0 +1,25 @@
+# --- IDEs e Sistema ---
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+.settings/
+*.iml
+.classpath
+.project
+
+# --- BACKEND (JAVA) ---
+Back-End/target/
+Back-End/**/*.class
+Back-End/*.log
+Back-End/**/*.jar
+Back-End/**/*.war
+Back-End/.mvn/
+Back-End/mvnw
+Back-End/mvnw.cmd
+
+# --- FRONTEND (ANGULAR) ---
+Front-End/node_modules/
+Front-End/dist/
+Front-End/.angular/
+Front-End/package-lock.json

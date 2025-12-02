@@ -1,0 +1,43 @@
+@use '@angular/material' as mat;
+
+@import 'ngx-toastr/toastr.css';
+
+
+@include mat.core();
+
+// define cor principal
+$verde173a23: (
+  500: #173a23,
+  contrast: (
+    500: white
+  )
+);
+
+// cria a paleta de cores com tua cor como base
+$primary: mat.define-palette($verde173a23, 500);
+
+// pode manter as outras como antes
+$accent: mat.define-palette(mat.$grey-palette, A200);
+$warn: mat.define-palette(mat.$red-palette);
+
+$my-theme: mat.define-light-theme((
+  color: (
+    primary: $primary,
+    accent: $accent,
+    warn: $warn,
+  ),
+));
+
+html, body, app-root {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.mat-drawer-inner-container {
+    overflow-x: hidden !important;
+}
+
+
+@include mat.all-component-themes($my-theme);
